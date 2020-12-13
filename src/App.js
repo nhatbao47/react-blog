@@ -1,26 +1,37 @@
-import './App.css';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
+import SidebarWidgets from './partials/SidebarWidgets';
+import Homepage from './screens/Homepage';
+import Blogs from './screens/Blogs';
 import ContactUs from './screens/ContactUs';
 import AboutUs from './screens/AboutUs';
-import Homepage from './screens/Homepage';
-import Blog from './screens/Blog/index';
+import PostContent from './components/PostContent';
+import NotFound from './screens/NotFound';
+import Category from './screens/Category';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header/>
-          <Switch>
-            <Route exact path="/" component={Homepage}/>
-            <Route exact path="/contact-us" component={ContactUs}/>
-            <Route exact path="/about-us" component={AboutUs}/>
-            <Route exact path="/blog" component={Blog}/>
-          </Switch>
-      </BrowserRouter>
-      <Footer/>
-    </div>
+    <>
+        <Header />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8">
+              <Switch>
+                <Route exact path="/" component={Homepage} />
+                <Route exact path="/contact" component={ContactUs} />
+                <Route exact path="/about" component={AboutUs} />
+                <Route exact path="/blog" component={Blogs} />
+                <Route path="/blog/:id" component={PostContent}/>
+                <Route path="/category/:id/:name" component={Category}/>
+                <Route path="*" component={NotFound}/>
+              </Switch>
+            </div>
+            <SidebarWidgets />
+          </div>
+        </div>
+      <Footer />
+    </>
   );
 }
 

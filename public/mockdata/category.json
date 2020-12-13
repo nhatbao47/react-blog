@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Web Design",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "name": "JavaScript",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "name": "HTML",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "name": "CSS",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "name": "Freebies",
+    "description": ""
+  },
+  {
+    "id": 6,
+    "name": "Tutorials",
+    "description": ""
+  }
+]
